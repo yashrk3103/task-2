@@ -1,0 +1,19 @@
+Phishing email : http://www.alert.scan001.com/error73oaB4-0983
+
+Email header :
+
+Return-Path: <support@secure-acc0unt.com>
+Received: from unknownserver.host.com (unknownserver.host.com. [185.31.210.99])
+        by mail.genuinecompany.com with ESMTPS id q9si7890434qke.4.2023.06.23.13.42.03
+        for <you@example.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 23 Jun 2023 13:42:03 -0700 (PDT)
+Authentication-Results: mail.genuinecompany.com;
+       spf=fail (genuinecompany.com: domain of support@secure-acc0unt.com does not designate 185.31.210.99 as permitted sender) smtp.mailfrom=support@secure-acc0unt.com
+Received-SPF: fail (genuinecompany.com: domain of support@secure-acc0unt.com does not designate 185.31.210.99 as permitted sender) client-ip=185.31.210.99;
+Date: Fri, 23 Jun 2023 13:42:00 -0700
+From: "PayPal Security Team" <support@secure-acc0unt.com>
+To: you@example.com
+Subject: Your Account Has Been Locked – Immediate Action Required
+Message-ID: <e98373ff.b82007b2@secure-acc0unt.com>
+Content-Type: text/html; charset="UTF-8"

@@ -1,0 +1,67 @@
+\========================================
+📬 HEADER ANALYSIS REPORT
+=========================
+
+🔹 Email Subject:
+Your Account Has Been Locked – Immediate Action Required
+
+🔹 Summary of Key Indicators:
+
+* ❌ **DMARC Compliance**: No DMARC record found
+* ❌ **SPF Authentication**: FAIL
+* ❌ **SPF Alignment**: Not aligned
+* ❌ **DKIM Authentication**: No DKIM signature found
+* ❌ **DKIM Alignment**: Failed - no aligned DKIM signature
+
+🔹 Relay Information:
+
+* Message was relayed from a suspicious server:
+
+  * `unknownserver.host.com [185.31.210.99]`
+  * Using domain: `secure-acc0unt.com`
+  * Received by: `mail.genuinecompany.com`
+  * Delay: 0 seconds (sent quickly)
+  * Not blacklisted, but likely spoofed
+
+🔹 SPF and DKIM Breakdown:
+
+* **SPF Domain**: secure-acc0unt.com
+* **Client IP**: 185.31.210.99
+* **SPF Status**: FAIL
+* **DKIM-Signature**: Not found
+* **DKIM Error**: No aligned DKIM signature
+
+🔹 Suspicious Header Values:
+
+* **Return-Path**: [support@secure-acc0unt.com](mailto:support@secure-acc0unt.com)
+* **From Address**: "PayPal Security Team" [support@secure-acc0unt.com](mailto:support@secure-acc0unt.com)
+* **Authentication-Results**:
+
+  * spf=fail (domain does not authorize sending IP)
+  * dkim=fail (no valid DKIM signature found)
+* **Received-SPF**: FAIL
+
+🔹 Full Raw Headers:
+
+```
+Return-Path: <support@secure-acc0unt.com>
+Received: from unknownserver.host.com (unknownserver.host.com. [185.31.210.99])
+        by mail.genuinecompany.com with ESMTPS id q9si7890434qke.4.2023.06.23.13.42.03
+        for <you@example.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 23 Jun 2023 13:42:03 -0700 (PDT)
+Authentication-Results: mail.genuinecompany.com;
+       spf=fail (genuinecompany.com: domain of support@secure-acc0unt.com does not designate 185.31.210.99 as permitted sender) smtp.mailfrom=support@secure-acc0unt.com
+Received-SPF: fail (genuinecompany.com: domain of support@secure-acc0unt.com does not designate 185.31.210.99 as permitted sender) client-ip=185.31.210.99;
+Date: Fri, 23 Jun 2023 13:42:00 -0700
+From: "PayPal Security Team" <support@secure-acc0unt.com>
+To: you@example.com
+Subject: Your Account Has Been Locked – Immediate Action Required
+Message-ID: <e98373ff.b82007b2@secure-acc0unt.com>
+Content-Type: text/html; charset="UTF-8"
+```
+
+📌 **Conclusion:**
+This email header clearly indicates phishing activity. The sender's domain is spoofed, SPF and DKIM validations fail, and the originating server is not trustworthy. These are strong signs of email forgery.
+
+✅ Add this file (`header_analysis.txt`) to your GitHub repo under the `phishing-email-analysis/` directory.
